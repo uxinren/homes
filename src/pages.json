@@ -1,0 +1,80 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "财务",
+				"enablePullDownRefresh": false
+			}
+		}
+        ,{
+            "path" : "pages/setting/setting",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send/add_finance",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send/add_health",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send/add_ability",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send/add_relationship",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+			"color": "#999",
+			"selectedColor": "#E3B4E4",
+			"fontSize": "14px",
+			"borderStyle": "white",
+			"backgroundColor": "#fff",
+			"list":[{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/icon/home-999.png",
+				"selectedIconPath": "static/icon/home.png",
+				"text": "首页"
+			}, {
+				"pagePath": "pages/setting/setting",
+				"iconPath": "static/icon/my-999.png",
+				"selectedIconPath": "static/icon/my.png",
+				"text": "我的"
+			}]
+		}
+}
