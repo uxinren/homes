@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export default {
 		data() {
 			return {
@@ -164,7 +164,7 @@
 					color: #999;
 					margin-right: 16px;
 					margin-top: 10px;
-					.category{
+					& > text{
 						border: 1px solid #efefef;
 						padding: 3px 4px;
 					}

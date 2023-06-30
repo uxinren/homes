@@ -144,7 +144,7 @@ const cfu = {
 		},
 		"extra": {
 			"ring": {
-				"ringWidth":30,
+				"ringWidth":34,
 				"activeOpacity": 0.5,
 				"activeRadius": 10,
 				"offsetAngle": 0,

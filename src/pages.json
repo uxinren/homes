@@ -7,64 +7,61 @@
 				"enablePullDownRefresh": false,
 				"navigationBarBackgroundColor": "#f5f5f9"
 			}
-		}
-        ,{
-            "path" : "pages/setting/setting",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/send/add_finance",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/send/add_health",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/send/add_ability",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/send/add_relationship",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/index/expense",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "收支统计",
-                "enablePullDownRefresh": false,
+		}, {
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/send/add_finance",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/send/add_health",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/send/add_ability",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/send/add_relationship",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/index/statistics",
+			"style": {
+				"navigationBarTitleText": "收支统计",
+				"enablePullDownRefresh": false,
 				"navigationBarBackgroundColor": "#E3B4E4",
 				"navigationBarTextStyle": "white"
-            }
-            
-        }
-    ],
+			}
+
+		},{
+			"path": "pages/index/record",
+			"style": {
+				"navigationBarTitleText": "收支记录",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#E3B4E4",
+				"navigationBarTextStyle": "white"
+			}
+		
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -72,21 +69,21 @@
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
-			"color": "#999",
-			"selectedColor": "#E3B4E4",
-			"fontSize": "14px",
-			"borderStyle": "white",
-			"backgroundColor": "#fff",
-			"list":[{
-				"pagePath": "pages/index/index",
-				"iconPath": "static/icon/home-999.png",
-				"selectedIconPath": "static/icon/home.png",
-				"text": "首页"
-			}, {
-				"pagePath": "pages/setting/setting",
-				"iconPath": "static/icon/my-999.png",
-				"selectedIconPath": "static/icon/my.png",
-				"text": "我的"
-			}]
-		}
+		"color": "#999",
+		"selectedColor": "#E3B4E4",
+		"fontSize": "14px",
+		"borderStyle": "white",
+		"backgroundColor": "#fff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/icon/home-999.png",
+			"selectedIconPath": "static/icon/home.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/setting/setting",
+			"iconPath": "static/icon/my-999.png",
+			"selectedIconPath": "static/icon/my.png",
+			"text": "我的"
+		}]
+	}
 }

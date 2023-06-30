@@ -62,7 +62,7 @@
 			<view class="box-title">
 				<view class="title">支出</view>
 				<navigator open-type="navigate" hover-class='none' 
-				:url="'./expense?type=' + encodeURIComponent(JSON.stringify(areaChartData))"
+				:url="'./statistics?type=' + encodeURIComponent(JSON.stringify(areaChartData))"
 				><text class="icon-right">&#xe769;</text></navigator>
 			</view>
 			<view class="expend">
@@ -77,7 +77,9 @@
 		<view class="box">
 			<view class="box-title">
 				<view class="title">明细</view>
-				<view><text class="icon-right">&#xe769;</text></view>
+				<navigator open-type="navigate" hover-class='none'
+				:url="'./record?type=' + encodeURIComponent(JSON.stringify(areaChartData))"
+				><text class="icon-right">&#xe769;</text></navigator>
 			</view>
 			<view class="chart-box">
 				<view v-for="(item,index) in detailList" :key="index" class="list-wraper">
