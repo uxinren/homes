@@ -43,7 +43,7 @@ const formatDateTime = (timeStamp, returnType)=>{
 
 const cfu = {
   //demotype为自定义图表类型，一般不需要自定义图表类型，只需要改根节点上对应的类型即可
-	"type":["cusArea","cusArcbar","pie","ring","rose","word","funnel","map","arcbar","line","column","mount","bar","area","radar","gauge","candle","mix","tline","tarea","scatter","bubble","demotype"],
+	"type":["cusRing","cusArea","cusArcbar","pie","ring","rose","word","funnel","map","arcbar","line","column","mount","bar","area","radar","gauge","candle","mix","tline","tarea","scatter","bubble","demotype"],
 	"range":["饼状图","圆环图","玫瑰图","词云图","漏斗图","地图","圆弧进度条","折线图","柱状图","山峰图","条状图","区域图","雷达图","仪表盘","K线图","混合图","时间轴折线","时间轴区域","散点图","气泡图","自定义类型"],
   //增加自定义图表类型，如果需要categories，请在这里加入您的图表类型，例如最后的"demotype"
   //自定义类型时需要注意"tline","tarea","scatter","bubble"等时间轴（矢量x轴）类图表，没有categories，不需要加入categories
@@ -131,6 +131,29 @@ const cfu = {
 				"gap": 1,
 			}
 		}
+	},
+	"cusRing":{
+		"type": "ring",
+	"color": color,
+		"rotate": false,
+		"dataLabel": true,
+		"legend": {
+			"show": true,
+			"position": "right",
+	  "lineHeight": 25,
+		},
+		"extra": {
+			"ring": {
+				"ringWidth":30,
+				"activeOpacity": 0.5,
+				"activeRadius": 10,
+				"offsetAngle": 0,
+				"labelWidth": 15,
+				"border": true,
+				"borderWidth": 3,
+				"borderColor": "#FFFFFF"
+			},
+		},
 	},
   //下面是自定义配置，请添加项目所需的通用配置
 	"pie":{
