@@ -100,7 +100,9 @@
 		<view class="box">
 			<view class="box-title">
 				<view class="title">预算</view>
-				<view><text class="icon-right">&#xe769;</text></view>
+				<navigator open-type="navigate" hover-class='none'
+				url="./budget"
+				><text class="icon-right">&#xe769;</text></navigator>
 			</view>
 			<view class="chart-box" style="width: 60vw; height: 25vh;">
 				<qiun-data-charts 

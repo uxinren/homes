@@ -5,7 +5,8 @@
 			"style": {
 				"navigationBarTitleText": "财务",
 				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#f5f5f9"
+				"navigationBarBackgroundColor": "#f5f5f9",
+				"navigationBarTextStyle": "black"
 			}
 		}, {
 			"path": "pages/setting/setting",
@@ -46,26 +47,31 @@
 			"path": "pages/index/statistics",
 			"style": {
 				"navigationBarTitleText": "收支统计",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#E3B4E4",
-				"navigationBarTextStyle": "white"
+				"enablePullDownRefresh": false
 			}
 
 		},{
 			"path": "pages/index/record",
 			"style": {
 				"navigationBarTitleText": "收支记录",
-				"enablePullDownRefresh": false,
-				"navigationBarBackgroundColor": "#E3B4E4",
-				"navigationBarTextStyle": "white"
+				"enablePullDownRefresh": false
 			}
 		
 		}
-	],
+	    ,{
+            "path" : "pages/index/budget",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "预算管理",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
+		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#fff",
+		"navigationBarBackgroundColor": "#E3B4E4",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
