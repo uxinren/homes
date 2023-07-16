@@ -16,34 +16,14 @@
 			}
 
 		}, {
-			"path": "pages/send/add_finance",
+			"path": "pages/send/addMoney",
 			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "记一笔",
+				"enablePullDownRefresh": false,
+				"disableScroll": true
 			}
 
-		}, {
-			"path": "pages/send/add_health",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/send/add_ability",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
-			"path": "pages/send/add_relationship",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
+		},{
 			"path": "pages/index/statistics",
 			"style": {
 				"navigationBarTitleText": "收支统计",

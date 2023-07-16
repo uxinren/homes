@@ -131,7 +131,9 @@
 			</view>
 		</view>
 		<view class="add">
-			<text class="icon-add">&#xe604;</text>
+			<navigator open-type="navigate" hover-class='none'
+			url="../send/addMoney"
+			><text class="icon-add">&#xe604;</text></navigator>
 		</view>
 	</view>
 </template>
