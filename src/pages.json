@@ -16,7 +16,7 @@
 			}
 
 		}, {
-			"path": "pages/send/addMoney",
+			"path": "pages/send/add-money",
 			"style": {
 				"navigationBarTitleText": "记一笔",
 				"enablePullDownRefresh": false,
@@ -43,6 +43,15 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "预算管理",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/send/class-manage",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "分类管理",
                 "enablePullDownRefresh": false
             }
             
