@@ -16,6 +16,7 @@
 <script lang="ts">
 import type {PropType} from "vue";
 import {defineComponent, ref} from "vue";
+import {onShow} from "@dcloudio/uni-app";
 export default defineComponent({
   props:{
     money: Number,
@@ -70,8 +71,7 @@ export default defineComponent({
               refMoney.value = (num1 - num2).toString();
             }
           }
-          console.log(111)
-          context.emit('update:money',parseFloat(refMoney.value))
+          context.emit('money',parseFloat(refMoney.value))
           props.onSubmit?.();
         }},
       {text: ".",onclick: () =>{appendText('.')}},
@@ -85,7 +85,14 @@ export default defineComponent({
     const hideKeyboard = () => {
       refShowKeyboard.value = false;
       context.emit('onHideKeyboard');
+      reset();
     }
+    const reset = () => {
+      refMoney.value = '0';
+    };
+    onShow(() => {
+      reset();
+    });
     return {
       money: refMoney,
       buttons,

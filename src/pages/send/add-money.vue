@@ -1,44 +1,60 @@
-<script lang="ts">
-export default {
-  data() {
-    return {
-      selected: 1,
-      titles: [{id: 1, name: "餐饮"}, {id: 2, name: "娱乐"}, {id: 3, name: "家用"}, {id: 4, name: "学习"}],
-      labels: [{
-        id: 1,
-        type:0,
-        name: "餐饮",
-        subclass: [{id: 11, name: "早餐"}, {id: 12, name: "中餐"}, {id: 13, name: "晚餐"}, {
-          id: 14,
-          type:0,
-          name: "下午茶"
-        }, {id: 15, name: "夜宵"}]
-      }, {id: 2, name: "娱乐", subclass: [{id: 21, name: "游戏"}, {id: 22, name: "旅游"}]}, {
-        id: 3,
-        type:0,
-        name: "家用",
-        subclass: [{id: 31, name: "纸巾"}, {id: 23, name: "毛巾"}]
-      }, {
-        id: 4,
-        type:1,
-        name: "学习",
-        subclass: [{id: 41, name: "考证"}, {id: 42, name: "视频课"}]}]
-    }
+<script lang="ts" setup>
+import {ref, computed} from 'vue';
+import {onLoad} from "@dcloudio/uni-app";
+// 获取路由参数
+const amount = ref<number>(0);
+onLoad((option) => {
+    amount.value = option?.money;
+});
+const selected = ref<number>(0);
+const items: Items[] = [
+  {
+    id: 1,
+    type: 0,
+    name: '餐饮',
+    item: [
+      {id: 11, name: '早餐'},
+      {id: 12, name: '中餐'},
+      {id: 13, name: '晚餐'},
+      {id: 14, name: '下午茶'},
+      {id: 15, name: '夜宵'},
+    ],
   },
-  computed: {
-    selectedSubLayers() {
-      const label = this.labels.find(label => label.id === this.selected);
-      return label ? label.subclass : [];
-    }
+  {
+    id: 2,
+    type: 0,
+    name: '娱乐',
+    item: [
+      {id: 21, name: '游戏'},
+      {id: 22, name: '旅游'}]
   },
-  methods: {
-    clickLabel(name) {
-      const label = this.labels.find(label => label.name === name);
-      this.selected = label ? label.id : 1;
-    }
-  }
-}
+  {
+    id: 3,
+    type: 0,
+    name: '家用',
+    item: [
+      {id: 31, name: '纸巾'},
+      {id: 23, name: '毛巾'}],
+  },
+  {
+    id: 4,
+    type: 1,
+    name: '学习',
+    item: [
+      {id: 41, name: '考证'},
+      {id: 42, name: '视频课'}],
+  },
+];
+const money = ref<number>(0);
+const selectedSubLayers = computed(() => {
+  const n = items.find((item) => item.id === selected.value);
+  return n ? n.item : [];
+});
 
+const clickItem = (name:string) => {
+  const item = items.find((item) => item.name === name);
+  selected.value = item ? item.id : 1;
+};
 </script>
 
 <template>
@@ -47,12 +63,11 @@ export default {
       <view class="top-box">
         <view class="input-money">
           <text>¥</text>
-          <text>0</text>
-          <!--					<input type="digit" maxlength=10 placeholder="0" placeholder-style="color:#E3B4E4" style="" cursor=100px>-->
+          <text>{{amount?amount:0}}</text>
         </view>
         <view class="input-ctl">
           <view class="expenses-ctl">
-            <text>支出</text>
+            <text>{{selected===0?'支出':'收入'}}</text>
             <text class="icon-add">&#xe6c2;</text>
           </view>
           <view class="date-ctl">
@@ -62,11 +77,11 @@ export default {
         </view>
       </view>
       <view class="center-box">
-        <view class="center-title" v-for="title in titles" :key="title.id">
-          <text @click="clickLabel(title.name)">{{ title.name }}</text>
+        <view class="center-title" v-for="item in items" :key="item.id">
+          <text @click="clickItem(item.name)">{{ item.name }}</text>
         </view>
         <swiper class="center-wrap">
-          <swiper-item class="swiper-wrap" v-for="label in labels" :key="label.id" :selected="selected">
+          <swiper-item class="swiper-wrap" v-for="item in items" :key="item.id" :selected="selected">
             <view class="swiper-item" v-for="sublayer in selectedSubLayers" :key="sublayer.id">{{ sublayer.name }}
             </view>
             <view class="all swiper-item">
@@ -143,6 +158,7 @@ export default {
 
       .date-ctl {
         margin-left: 12rpx;
+
         & :last-child {
           margin-right: 8rpx;
         }
@@ -209,7 +225,7 @@ export default {
   }
 }
 
-.css-label-click {
+.css-item-click {
   border-bottom: 2px solid $uni-color-primary;
   color: $uni-color-primary;
 }

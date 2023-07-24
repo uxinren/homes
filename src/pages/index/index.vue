@@ -2,7 +2,6 @@
 import NumericKeyboard from '@/component/NumericKeyboard.vue';
 import {ref, onMounted} from 'vue';
 
-const refParentMoney = ref(0);
 const refDetailList = ref([
   {date: '01-01', content: '早餐', amount: 20, tag: '固定支出'},
   {date: '01-03', content: '晚餐', amount: 70, tag: '计划支出'},
@@ -17,10 +16,11 @@ const refOpts = ref({
   },
 });
 
-const ok = () => {
+const ok = (money:number) => {
   uni.navigateTo({
-    url: '../send/add-money?money=' + refParentMoney.value
+    url: '../send/add-money?money=' + money,
   });
+  refShowKeyboard.value = false;
 };
 
 const openKeyboard = () => {
@@ -28,7 +28,6 @@ const openKeyboard = () => {
 };
 
 const closeKeyboard = () => {
-  console.log(refParentMoney.value);
   refShowKeyboard.value = false;
 };
 
@@ -156,7 +155,7 @@ onMounted(getServerData);
       <text class="icon-add">&#xe604;</text>
     </view>
     <view class="number-button" v-show="refShowKeyboard">
-      <NumericKeyboard @onHideKeyboard="closeKeyboard" v-model:money="refParentMoney" @update:money="ok"/>
+      <NumericKeyboard @onHideKeyboard="closeKeyboard" @money="ok"/>
     </view>
   </view>
 </template>
